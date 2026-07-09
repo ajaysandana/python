@@ -1,8 +1,0 @@
-Broadcasting is a powerful feature in NumPy that allows you to perform arithmetic operations on arrays of different shapes.
-Normally, to add or multiply two arrays element-by-element, they need to be the exact same size. Broadcasting solves this by "stretching" or duplicating the smaller array across the larger array behind the scenes (without actually making copies of the data in memory, making it highly efficient).
-
-The Golden Rules of Broadcasting
-NumPy compares the shapes of the two arrays element-wise, starting from the trailing (rightmost) dimensions and working its way left. Two dimensions are compatible if:
-	1. They are equal, OR
-	2. One of them is exactly 1.
-If these conditions aren't met, NumPy throws a ValueError: operands could not be broadcast together.
