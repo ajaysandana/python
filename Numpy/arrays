@@ -1,0 +1,47 @@
+import numpy as np
+
+# print(np.__version__)
+
+# l1 = [1,2,3,4]
+# l2 = l1 * 2
+# print(l2)  #result = [1, 2, 3, 4, 1, 2, 3, 4]
+
+# array = np.array([1,2,3,4])
+# array = array*2
+# print(array) #result  = [2 4 6 8]
+
+# print(type(array)) #<class 'numpy.ndarray'> --nd = N dimesional
+
+
+#### 0 dimension
+# array = np.array('A')
+# print(array.ndim) # 0 dimension
+# print(array.shape) # () no shape
+
+
+#### 1 dimension
+
+# array = np.array(['A', 'B', 'C'])
+# print(array.ndim) # 1 dimension
+# print(array.shape) # (3,) 3 columns/elements
+
+#### 2 dimensions
+# array = np.array([['A', 'B', 'C'], 
+#                   [1,2,3]])
+# print(array.ndim) # 2 dimension
+# print(array.shape) # (2, 3) 2 rows and 3 columns/elements
+
+
+##### 3 dimensions
+array = np.array([[['A', 'B', 'C'],[1,2,3], [5,6,7]],
+                  [[8,9,0], [1,2,3], [4,5,6]],
+                  [[3,4,5], [8,9,0], [2,3,4]]])
+# print(array.ndim) # 3 dimension
+# print(array.shape) # (3, 3, 3) 3 layers, 3 rows, and 3 columns/elements
+
+####chain indexing in python
+print(array[2][0][0]) #result = 3
+
+# mutli-dimensional indexing in numpy
+print(array[2,0,0]) #result = 3
+
