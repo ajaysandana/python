@@ -12,4 +12,5 @@ CREATE TABLE IF NOT EXISTS public.fct_orders (
 )
 DISTSTYLE KEY
 DISTKEY (customer_id)
-COMPOUND SORTKEY (order_timestamp, customer_id);
+#added the order_status sortkey
+COMPOUND SORTKEY (order_timestamp, customer_id, order_status);
