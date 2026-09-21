@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS public.fct_orders (
+    order_id        BIGINT          IDENTITY(1, 1) ENCODE az64,
+    customer_id     INTEGER         NOT NULL       ENCODE az64,
+    order_timestamp TIMESTAMP       NOT NULL       ENCODE az64,
+    order_status    VARCHAR(32)     NOT NULL       ENCODE zstd,
+    total_amount    NUMERIC(12, 2)  NOT NULL       ENCODE az64,
+    discount_amount NUMERIC(10, 2)  DEFAULT 0.00   ENCODE az64,
+    shipping_city   VARCHAR(128)                   ENCODE zstd,
+    shipping_state  VARCHAR(64)                    ENCODE zstd,
+    shipping_zip    VARCHAR(20)                    ENCODE zstd,
+    created_at      TIMESTAMP       DEFAULT SYSDATE ENCODE az64,
+)
+DISTSTYLE KEY
+DISTKEY (customer_id)
+COMPOUND SORTKEY (order_timestamp, customer_id);
