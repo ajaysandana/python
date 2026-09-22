@@ -7,8 +7,10 @@ CREATE TABLE IF NOT EXISTS public.fct_orders (
     discount_amount NUMERIC(10, 2)  DEFAULT 0.00   ENCODE az64,
     shipping_city   VARCHAR(128)                   ENCODE zstd,
     shipping_state  VARCHAR(64)                    ENCODE zstd,
-    shipping_zip    VARCHAR(20)                    ENCODE zstd,
-    created_at      TIMESTAMP       DEFAULT SYSDATE ENCODE az64,
+    shipping_zip    VARCHAR(10)                    ENCODE zstd,
+    created_at      date       DEFAULT SYSDATE ENCODE az64,
+    test_col     VARCHAR(20)                    ENCODE zstd
+    test_col2 varchar(10)
 )
 DISTSTYLE KEY
 DISTKEY (customer_id)
